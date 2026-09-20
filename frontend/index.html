@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Login</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="card">
+  <div class="card">
     <h1>Welcome Back</h1>
-    <p class="subtitle">Sign in to your account</p>
 
-    <form id="loginForm">
-      <label>Email</label>
-      <input type="email" id="email" required>
+    <div id="error-box" class="error-box hidden"></div>
 
-      <label>Password</label>
-      <input type="password" id="password" required>
+    <!-- LOGIN FORM -->
+    <form id="login-form" class="form">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" placeholder="you@example.com" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" placeholder="••••••••" required />
 
       <button type="submit">Login</button>
-      <p id="message"></p>
+
+      <p class="switch-text">
+        Don't have an account? <a href="#" id="show-register">Register</a>
+      </p>
     </form>
 
-    <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    <!-- REGISTER FORM -->
+    <form id="register-form" class="form hidden">
+      <label for="register-name">Name</label>
+      <input type="text" id="register-name" placeholder="Juan Dela Cruz" required />
 
-    <form id="registerForm" class="hidden">
-      <h2>Create Account</h2>
-      <label>Name</label>
-      <input type="text" id="name">
+      <label for="register-email">Email</label>
+      <input type="email" id="register-email" placeholder="you@example.com" required />
 
-      <label>Email</label>
-      <input type="email" id="regEmail">
+      <label for="register-password">Password</label>
+      <input type="password" id="register-password" placeholder="At least 6 characters" required />
 
-      <label>Password</label>
-      <input type="password" id="regPassword">
+      <button type="submit">Create Account</button>
 
-      <button type="submit">Register</button>
-      <p id="registerMessage"></p>
+      <p class="switch-text">
+        Already have an account? <a href="#" id="show-login">Login</a>
+      </p>
     </form>
-  </main>
+  </div>
 
   <script src="app.js"></script>
 </body>
