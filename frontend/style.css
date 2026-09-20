@@ -1,11 +1,12 @@
 :root {
-  --bg: #e0e5ec;
-  --text: #3a3f47;
-  --muted: #7b828e;
-  --accent: #5b6cff;
-  --shadow-light: #ffffff;
-  --shadow-dark: #a3b1c6;
-  --radius: 18px;
+  --bg: #fff5f7;
+  --card-bg: #ffffff;
+  --text: #4a3b3f;
+  --muted: #b08a94;
+  --accent: #f4a9c0;
+  --accent-hover: #ef8fae;
+  --border: #f6d9e2;
+  --radius: 16px;
 }
 
 * {
@@ -27,15 +28,17 @@ body {
 .card {
   width: 100%;
   max-width: 380px;
-  background: var(--bg);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 40px 32px;
-  box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+  box-shadow: 0 4px 24px rgba(244, 169, 192, 0.15);
 }
 
 h1 {
   text-align: center;
   font-size: 1.5rem;
+  font-weight: 600;
   margin: 0 0 28px;
   color: var(--text);
 }
@@ -57,40 +60,42 @@ label {
 }
 
 input {
-  border: none;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   padding: 14px 16px;
-  background: var(--bg);
-  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+  background: #fffbfc;
   font-size: 0.95rem;
   color: var(--text);
   outline: none;
+  transition: border-color 0.15s ease;
+}
+
+input::placeholder {
+  color: #d9b7c1;
 }
 
 input:focus {
-  box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  border-color: var(--accent);
 }
 
 button {
   margin-top: 26px;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 14px;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
   background: var(--accent);
-  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
   cursor: pointer;
-  transition: transform 0.05s ease, box-shadow 0.15s ease;
+  transition: background 0.15s ease, transform 0.05s ease;
 }
 
 button:hover {
-  filter: brightness(1.05);
+  background: var(--accent-hover);
 }
 
 button:active {
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 8px rgba(255, 255, 255, 0.15);
   transform: translateY(1px);
 }
 
@@ -102,7 +107,7 @@ button:active {
 }
 
 .switch-text a {
-  color: var(--accent);
+  color: var(--accent-hover);
   text-decoration: none;
   font-weight: 600;
 }
@@ -112,13 +117,13 @@ button:active {
 }
 
 .error-box {
-  background: var(--bg);
-  color: #d1495b;
+  background: #fff0f4;
+  color: #d1497b;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px 14px;
   font-size: 0.85rem;
   margin-bottom: 16px;
-  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
 }
 
 .dash-content {
@@ -132,7 +137,7 @@ button:active {
 }
 
 .dash-line span {
-  color: var(--accent);
+  color: var(--accent-hover);
   font-weight: 600;
 }
 
