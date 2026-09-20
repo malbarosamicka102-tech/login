@@ -1,5 +1,5 @@
 // IMPORTANT: this must point at the real deployed backend URL, not localhost.
-const API_URL = 'https://REPLACE_WITH_RENDER_URL.onrender.com';
+const API_URL = 'https://login-system-backend-2o9m.onrender.com';
 
 function showError(message) {
   const box = document.getElementById('error-box');
